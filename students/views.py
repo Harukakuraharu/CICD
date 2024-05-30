@@ -18,4 +18,4 @@ class CoursesViewSet(ModelViewSet):
 
 @api_view(['GET'])
 def sample_view(request):
-    return Response({'message': 'Пока на половине пути'})
+    return Response({'message': 'Пока начало'})
