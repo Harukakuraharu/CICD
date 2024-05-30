@@ -57,5 +57,11 @@ jobs:
           DB_PASSWORD: ${{ env.DB_PASSWORD }}
           DB_PORT: ${{ env.DB_PORT }}
           DB_HOSTS: ${{ env.DB_HOSTS }}
-
+      - name: Деплой проекта
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/user/CICD/deploy.exp
 
